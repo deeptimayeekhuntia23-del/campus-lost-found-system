@@ -1,13 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
-@app.route("/" )
+@app.route("/")
 def home():
-  return """
-  <h1> Campus Lost & Found</h1>
-  <p>Welcome to our Campus
-item recovery system!</p>
- """
+    return render_template("index.html")
 
 if __name__ == "__main__":
-  app.ren(debug=True)
+    app.run(debug=True)
